@@ -2,3 +2,13 @@
 
 <p>Many people take no care of their money till they come nearly to the end of it, and others do just the same with their time.</p>
 <p id = quote>Johann Wolfgang von Goeth</p>
+
+<div >
+  <% @late3_transaction[0..3].each do |transaction| %>
+
+  <div >
+    <p>Name: <%= transaction.name %></p>
+  </div>
+
+  <% end %>
+</div>
