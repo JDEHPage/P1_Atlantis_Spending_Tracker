@@ -4,11 +4,19 @@
 <p id = quote>Johann Wolfgang von Goeth</p>
 
 <div >
-  <% @late3_transaction[0..3].each do |transaction| %>
+  <% @transaction.first(2).each do |transaction| %>
 
   <div >
-    <p>Name: <%= transaction.name %></p>
+    <p>Merchant: <%= transaction.merchant.name %></p>
+    <p>Date: <%= transaction.transaction_date %></p>
+    <p>Cost: £<%= transaction.value.to_f/100 %></p>
+    <p>Type Tag: <%= transaction.tag_id %></p>
   </div>
+
+
+
+
+
 
   <% end %>
 </div>
