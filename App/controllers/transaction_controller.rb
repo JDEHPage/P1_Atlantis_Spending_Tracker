@@ -8,6 +8,11 @@ get '/transactions' do
   erb ( :"transactions/index_actions")
 end
 
+get '/transaction/new' do
+  @transaction = Transaction.all()
+  erb ( :"transactions/new")
+end
+
 get '/transaction/:id' do
   @transaction = Transaction.find(params['id'])
   erb( :"transactions/show" )
@@ -18,18 +23,10 @@ end
 #   erb( :"victims/show" )
 # end
 
-
-
-get '/transaction/new' do
-  @transaction = Transaction.all()
-  erb ( :"transactions/new")
-end
-
-get '/transaction/edit' do
-  @transaction = Tag.all()
+get '/transaction/:id/edit' do
+  @transaction = Transaction.find(params['id'])
   erb ( :"transactions/edit")
 end
-
 
 
 

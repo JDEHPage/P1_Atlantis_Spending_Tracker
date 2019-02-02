@@ -29,10 +29,10 @@ class Transaction
     return transactions.map {|transaction| Transaction.new(transaction)}
   end
 
-  def delete()
+  def self.delete(id)
     sql = "DELETE FROM transactions WHERE id = $1"
-    values = [@id]
-    SqlRunner.run(sql, values)
+    values = [id]
+    SqlRunner.run( sql, values )
   end
 
   def update()
