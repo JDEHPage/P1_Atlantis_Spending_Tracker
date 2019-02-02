@@ -3,7 +3,7 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/transaction.rb')
 also_reload( '../models/*' )
 
-get '/transaction' do
+get '/transactions' do
   @transaction = Transaction.all()
   erb ( :"transactions/index")
 end

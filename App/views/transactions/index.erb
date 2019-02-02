@@ -1,8 +1,4 @@
-<h1>Welcome Back</h1>
-
-<p>Many people take no care of their money till they come nearly to the end of it, and others do just the same with their time.</p>
-<p id = quote>Johann Wolfgang von Goeth</p>
-
+<h1>All Your Transactions</h1>
 
 <table>
   <tr>
@@ -12,7 +8,7 @@
     <th>Cost</th>
     <th>Type Tag</th>
   </tr>
-  <% @transaction.first(3).each do |transaction| %>
+  <% @transaction.each do |transaction| %>
   <tr>
     <td><a href="/transactions/<%= transaction.id %>"><%= transaction.transaction_date %></a></td>
     <td>|</td>
