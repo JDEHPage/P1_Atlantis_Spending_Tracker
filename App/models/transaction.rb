@@ -57,6 +57,11 @@ class Transaction
     return merchant
   end
 
+  def tag()
+    tag = Tag.find(@tag_id)
+    return tag
+  end
+
 
 
 

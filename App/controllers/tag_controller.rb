@@ -3,12 +3,28 @@ require( 'sinatra/contrib/all' )
 require_relative( '../models/tag.rb')
 also_reload( '../models/*' )
 
-get '/tag' do
+get '/tags' do
   @tag = Tag.all()
-  erb ( :"tags/index")
+  erb ( :"tags/index_t")
 end
 
 get '/tag/:id' do
   @tag = Tag.find(params['id'].to_i)
   erb( :"tags/show" )
+end
+
+get '/tag/edit' do
+  @tag = Tag.all()
+  erb ( :"tags/edit")
+end
+
+post '/tags' do
+  tag = Tag.new(params)
+  tag.save
+  redirect '/tags'
+end
+
+post '/tag/:id/delete' do
+  Tag.delete(params[:id])
+  redirect '/tags'
 end

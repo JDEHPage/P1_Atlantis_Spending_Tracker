@@ -8,6 +8,7 @@
     <th>Cost</th>
     <th>Type Tag</th>
   </tr>
+
   <% @transaction.each do |transaction| %>
   <tr>
     <td><a href="/transactions/<%= transaction.id %>"><%= transaction.transaction_date %></a></td>
@@ -15,6 +16,11 @@
     <td><%= transaction.merchant.name %></td>
     <td>£<%= '%.2f' %(transaction.value.to_f/100) %></td>
     <td><%= transaction.tag_id %></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><hr /></td>
   </tr>
   <% end %>
+
 </table>

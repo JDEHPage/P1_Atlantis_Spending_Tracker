@@ -18,7 +18,7 @@
     <td>|</td>
     <td><%= transaction.merchant.name %></td>
     <td>£<%= '%.2f' %(transaction.value.to_f/100) %></td>
-    <td><%= transaction.tag_id %></td>
+    <td><%= transaction.tag.name %></td>
   </tr>
   <% end %>
 </table>
