@@ -5,7 +5,7 @@ also_reload( '../models/*' )
 
 get '/transactions' do
   @transaction = Transaction.all()
-  erb ( :"transactions/index_t")
+  erb ( :"transactions/index_actions")
 end
 
 get '/transaction/:id' do

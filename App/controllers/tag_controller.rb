@@ -24,6 +24,13 @@ post '/tags' do
   redirect '/tags'
 end
 
+post '/tab/:id' do
+  tab = Merchant.new(params)
+  tab.update
+  redirect '/tabs'
+end
+
+
 post '/tag/:id/delete' do
   Tag.delete(params[:id])
   redirect '/tags'

@@ -15,7 +15,6 @@ get '/merchant/:id' do
 end
 
 get '/merchant/:id/edit' do
-
   @merchant = Merchant.find(params['id'].to_i)
   erb ( :"merchants/edit")
 end

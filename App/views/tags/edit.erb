@@ -1,0 +1,17 @@
+<p>Hello <%= @tab.name %></p>
+
+
+<form method="post" action="/tab/<%= @tab.id %>">
+  <div>
+
+  <div>
+    <label for="edit_tab"></label>
+    <input type="text" name="name" id="edit_tab" value="<%= @tab.name %>">
+  </div>
+
+  <div>
+    <input type="submit" value="Update Tab">
+  </div>
+
+</div>
+</form>
