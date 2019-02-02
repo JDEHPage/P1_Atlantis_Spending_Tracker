@@ -44,12 +44,12 @@ class Transaction
   end
 
   def self.find( id )
-    sql = "SELECT * FROM transaction
+    sql = "SELECT * FROM transactions
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql ,values).first
-    tag = Tag.new(result)
-    return tag
+    result = SqlRunner.run(sql, values).first
+    transaction = Transaction.new(result)
+    return transaction
   end
 
   def merchant()

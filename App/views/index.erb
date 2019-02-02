@@ -14,7 +14,7 @@
   </tr>
   <% @transaction.first(3).each do |transaction| %>
   <tr>
-    <td><a href="/transactions/<%= transaction.id %>"><%= transaction.transaction_date %></a></td>
+    <td><a href="/transaction/<%= transaction.id %>"><%= transaction.transaction_date %></a></td>
     <td>|</td>
     <td><%= transaction.merchant.name %></td>
     <td>£<%= '%.2f' %(transaction.value.to_f/100) %></td>

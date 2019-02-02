@@ -9,19 +9,29 @@ get '/transactions' do
 end
 
 get '/transaction/:id' do
-  @transaction = Transaction.find(params['id'].to_i)
+  @transaction = Transaction.find(params['id'])
   erb( :"transactions/show" )
 end
 
-get '/tag/new' do
-  @tag = Tag.all()
-  erb ( :"tags/new")
+# get '/victims/:id' do
+#   @victim = Victim.find(params['id'].to_i)
+#   erb( :"victims/show" )
+# end
+
+
+
+get '/transaction/new' do
+  @transaction = Transaction.all()
+  erb ( :"transactions/new")
 end
 
-get '/tag/edit' do
-  @tag = Tag.all()
-  erb ( :"tags/edit")
+get '/transaction/edit' do
+  @transaction = Tag.all()
+  erb ( :"transactions/edit")
 end
+
+
+
 
 
 

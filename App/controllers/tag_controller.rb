@@ -8,15 +8,14 @@ get '/tags' do
   erb ( :"tags/index_t")
 end
 
-get '/tag/:id' do
-  @tag = Tag.find(params['id'].to_i)
-  erb( :"tags/show" )
-end
-
-get '/tag/edit' do
-  @tag = Tag.all()
+get '/tag/:id/edit' do
+  @tag = Tag.find(params['id'])
   erb ( :"tags/edit")
 end
+
+
+
+
 
 post '/tags' do
   tag = Tag.new(params)
@@ -24,10 +23,10 @@ post '/tags' do
   redirect '/tags'
 end
 
-post '/tab/:id' do
-  tab = Merchant.new(params)
+post '/tag/:id' do
+  tab = Tag.new(params)
   tab.update
-  redirect '/tabs'
+  redirect '/tags'
 end
 
 

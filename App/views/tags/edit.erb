@@ -1,16 +1,16 @@
-<p>Hello <%= @tab.name %></p>
+<p>Hello <%= @tag.name %></p>
 
 
-<form method="post" action="/tab/<%= @tab.id %>">
+<form method="post" action="/tag/<%= @tag.id %>">
   <div>
 
   <div>
-    <label for="edit_tab"></label>
-    <input type="text" name="name" id="edit_tab" value="<%= @tab.name %>">
+    <label for="edit_tag"></label>
+    <input type="text" name="name" id="edit_tag" value="<%= @tag.name %>">
   </div>
 
   <div>
-    <input type="submit" value="Update Tab">
+    <input type="submit" value="Update Tag">
   </div>
 
 </div>
