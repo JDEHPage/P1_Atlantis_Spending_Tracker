@@ -43,11 +43,6 @@ post '/transactions' do
   redirect '/transactions'
 end
 
-post '/transaction/new' do
-  transaction = Transaction.new(params)
-  transaction.new
-  redirect '/transactions'
-end
 
 post '/transaction/:id' do
   transaction = Transaction.new(params)

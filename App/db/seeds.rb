@@ -61,42 +61,42 @@ tag5.save()
 transaction1 = Transaction.new({
   'merchant_id' => merchant1.id,
   'transaction_date' => "02/03/2019",
-  'value' => 2250,
+  'value' => "22.50",
   'tag_id' => tag1.id
   })
 
 transaction2 = Transaction.new({
   'merchant_id' => merchant2.id,
   'transaction_date' => "03/03/2019",
-  'value' => 560,
+  'value' => "5.60",
   'tag_id' => tag2.id
   })
 
 transaction3 = Transaction.new({
   'merchant_id' => merchant1.id,
   'transaction_date' => "04/03/2019",
-  'value' => 660,
+  'value' => "6.60",
   'tag_id' => tag2.id
   })
 
 transaction4 = Transaction.new({
   'merchant_id' => merchant3.id,
   'transaction_date' => "04/03/2019",
-  'value' => 1500,
+  'value' => "15.00",
   'tag_id' => tag5.id
   })
 
 transaction5 = Transaction.new({
   'merchant_id' => merchant4.id,
   'transaction_date' => "06/03/2019",
-  'value' => 1560,
+  'value' => "15.60",
   'tag_id' => tag4.id
   })
 
 transaction6 = Transaction.new({
   'merchant_id' => merchant5.id,
   'transaction_date' => "09/03/2019",
-  'value' => 560,
+  'value' => "5.60",
   'tag_id' => tag3.id
   })
 

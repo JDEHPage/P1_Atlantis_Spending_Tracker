@@ -22,17 +22,7 @@ class Transaction
   end
 
 
-
   def save
-    sql ="INSERT INTO transactions(
-    transaction_date, merchant_id, value, tag_id
-    ) VALUES ( $1, $2, $3, $4 ) RETURNING id"
-      values = [@transaction_date, @merchant_id, @value, @tag_id]
-      results = SqlRunner.run(sql, values)
-      @id = results.first()['id'].to_i
-  end
-
-  def new
     sql ="INSERT INTO transactions(
     transaction_date, merchant_id, value, tag_id
     ) VALUES ( $1, $2, $3, $4 ) RETURNING id"
