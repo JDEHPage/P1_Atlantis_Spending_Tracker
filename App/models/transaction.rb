@@ -59,7 +59,7 @@ class Transaction
     sql = "UPDATE transactions SET (
     transaction_date, merchant_id, value, tag_id )
      = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@transaction_date, @merchant_id, @value, @tag_id, @id]
+    values = [@transaction_date, @merchant_id, (@value.to_f * 100).to_i, @tag_id, @id]
     SqlRunner.run(sql, values)
   end
 
