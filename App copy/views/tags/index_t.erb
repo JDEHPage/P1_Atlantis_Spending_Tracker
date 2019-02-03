@@ -1,0 +1,39 @@
+<h1>All Your Type Tags</h1>
+
+<!-- New Tabs -->
+<form method="post" action="/tags">
+  <div>
+
+  <div>
+    <label for="new_tag"></label>
+    <input type="text" name="name" id="new_tag">
+  </div>
+
+  <div>
+    <input type="submit" value="Add New Tab">
+  </div>
+
+</div>
+</form>
+
+
+<!-- List of all tags -->
+<div >
+  <% @tag.each do |tag| %>
+
+  <div >
+    <p><%= tag.name %></p>
+  </div>
+
+  <div>
+    <a href="/tag/<%= tag.id %>/edit">Edit</a>
+  </div>
+
+  <div>
+    <form method="post" action="/tag/<%= tag.id %>/delete" >
+      <input type="submit" value="Delete">
+    </form>
+  </div>
+
+  <% end %>
+</div>

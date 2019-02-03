@@ -5,43 +5,23 @@ class Transaction
   attr_reader( :id )
   attr_accessor( :merchant_id, :transaction_date, :value, :tag_id )
 
-  # def initialize(options = {})
-  #   @merchant_id = options['merchant_id'] || 0
-  #   @transaction_date = options['transaction_date']
-  #   @value = options['value']
-  #   @tag_id = options['tag_id']
-  #   @id = options['id'].to_i if options['id']
-  # end
-
   def initialize(options)
-    @transaction_date = options['transaction_date']
     @merchant_id = options['merchant_id']
+    @transaction_date = options['transaction_date']
     @value = options['value']
     @tag_id = options['tag_id']
     @id = options['id'].to_i if options['id']
   end
 
-
-
   def save
     sql ="INSERT INTO transactions(
-    transaction_date, merchant_id, value, tag_id
+    merchant_id, transaction_date, value, tag_id
     ) VALUES ( $1, $2, $3, $4 ) RETURNING id"
-      values = [@transaction_date, @merchant_id, @value, @tag_id]
+      values = [@merchant_id, @transaction_date,
+        @value, @tag_id]
       results = SqlRunner.run(sql, values)
       @id = results.first()['id'].to_i
   end
-
-  def new
-    sql ="INSERT INTO transactions(
-    transaction_date, merchant_id, value, tag_id
-    ) VALUES ( $1, $2, $3, $4 ) RETURNING id"
-      values = [@transaction_date, @merchant_id, (@value.to_f * 100).to_i, @tag_id]
-      results = SqlRunner.run(sql, values)
-      @id = results.first()['id'].to_i
-  end
-
-
 
   def self.all
     sql = "SELECT * FROM transactions"
@@ -57,9 +37,9 @@ class Transaction
 
   def update()
     sql = "UPDATE transactions SET (
-    transaction_date, merchant_id, value, tag_id )
+    merchant_id, transaction_date, value, tag_id )
      = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@transaction_date, @merchant_id, @value, @tag_id, @id]
+    values = [@merchant_id, @transaction_date, @value, @tag_id, @id]
     SqlRunner.run(sql, values)
   end
 

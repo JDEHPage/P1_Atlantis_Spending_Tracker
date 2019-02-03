@@ -10,11 +10,6 @@ class Merchant
     @id = options['id'].to_i if options['id']
   end
 
-  # def initialize(options = {})
-  #   @name = options['name'] || ''
-  #   @id = options['id'].to_i if options['id']
-  # end
-
   def save
     sql ="INSERT INTO merchants(
     name

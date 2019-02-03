@@ -100,13 +100,6 @@ transaction6 = Transaction.new({
   'tag_id' => tag3.id
   })
 
-# transaction7 = Transaction.new({
-#   'merchant_id' => ,
-#   'transaction_date' => "09/03/2019",
-#   'value' => 560,
-#   'tag_id' => tag3.id
-#   })
-
 
 
 transaction1.save()
@@ -115,7 +108,6 @@ transaction3.save()
 transaction4.save()
 transaction5.save()
 transaction6.save()
-# transaction7.save()
 
 binding.pry
 nil
