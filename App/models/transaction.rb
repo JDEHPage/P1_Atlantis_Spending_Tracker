@@ -72,9 +72,19 @@ class Transaction
     return tag
   end
 
+  def self.total()
+    sql = "SELECT SUM(value)
+    FROM transactions;"
+    result = SqlRunner.run(sql).first["sum"].to_f/100
+    return result.to_s
+  end
 
-
-
+  # def self.total_transactions()
+  #    total = 0
+  #    total_transactions = Transaction.all()
+  #    total_transactions.each { |transaction| total += transaction.value.to_f }
+  #    return total/100
+  #  end
 
 
 
