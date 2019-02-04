@@ -79,6 +79,9 @@ class Transaction
     return result.to_s
   end
 
+  
+
+
   # def self.total_transactions()
   #    total = 0
   #    total_transactions = Transaction.all()

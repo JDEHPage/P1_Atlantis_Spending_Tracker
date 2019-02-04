@@ -1,34 +1,38 @@
-<h1>All Your Transactions</h1>
 
-<div>
-  <a href="/transaction/new">Add A Transaction</a>
-</div>
 
-<div>
+
+<div class="tr-layout">
+
+
+<div class="">
+  <h1>All Your Transactions</h1>
+  <a href="/transaction/new" class="link-button" id="new-tr">Add A Transaction</a>
   <p>Your total transactions so far: £<%= Transaction.total %></p>
 </div>
 
-<table>
-  <tr>
-    <th>Date</th>
-    <td></td>
-    <th>Merchant</th>
-    <th>Cost</th>
-    <th>Type Tag</th>
-  </tr>
+<div class="home-layout">
 
-  <% @transaction.each do |transaction| %>
-  <tr>
-    <td><a href="/transaction/<%= transaction.id %>"><%= transaction.transaction_date %></a></td>
-    <td>|</td>
-    <td><%= transaction.merchant.name %></td>
-    <td>£<%= '%.2f' %(transaction.value.to_f/100) %></td>
-    <td><%= transaction.tag.name %></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><hr/></td>
-  </tr>
-  <% end %>
+    <div class="table-layout">
+    <h3>Your Latest Transactions</h3>
+    <table>
+      <tr>
+        <th class="table-item">Date</th>
+        <th class="table-item">Merchant</th>
+        <th class="table-item">Cost</th>
+        <th class="table-item">Type Tag</th>
+      </tr>
+      <% @transaction.each do |transaction| %>
+      <tr>
+        <td class="table-item" ><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
+        <td class="table-item" ><%= transaction.merchant.name %></td>
+        <td class="table-item">£<%= '%.2f' %(transaction.value.to_f/100) %></td>
+        <td class="table-item" id="final-col"><%= transaction.tag.name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 
-</table>
+</div>
+
+
+</div>

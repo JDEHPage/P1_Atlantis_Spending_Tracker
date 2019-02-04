@@ -5,22 +5,22 @@ DROP TABLE tags;
 
 CREATE TABLE merchants(
   id SERIAL8 primary key,
-  name VARCHAR(255) not null
+  name VARCHAR(255)
 );
 
 CREATE TABLE tags(
   id SERIAL8 primary key,
   -- tags_link_id INT8 references tags_links(id),
-  name VARCHAR(255) not null
+  name VARCHAR(255)
 );
 
 
 CREATE TABLE transactions(
   id SERIAL8 primary key,
-  merchant_id INT8 REFERENCES merchants(id),
+  merchant_id INT8 REFERENCES merchants(id) ON DELETE SET NULL,
   transaction_date DATE,
   value INT,
-  tag_id INT8 REFERENCES tags(id)
+  tag_id INT8 REFERENCES tags(id) ON DELETE SET NULL
 );
 
 

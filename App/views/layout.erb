@@ -5,23 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Atlantis Spending Tracker</title>
 
-  <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 
-  <link rel="icon" href="/images/hazard.png" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" href="/    "> -->
+  <link rel="icon" href="/images/Ico (PNG).png" />
+
+  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/layout.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
+  <link rel="stylesheet" type="text/css" href="/styles/home.css">
 
 </head>
 <body>
-  <nav>
+  <!-- <div> -->
+  <!-- <main id="menu"> -->
+  <nav class="menu">
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/transactions">Transactions</a></li>
-      <li><a href="/merchants">Merchants</a></li>
-      <li><a href="/tags">Tags</a></li>
+      <li ><a href="/">HOME</a></li>
+      <li ><a href="/transactions">TRANSACTIONS</a></li>
+      <img src="images/logo (Small).jpg" alt="Atlantis Logo"  id="menu-pic">
+      <li ><a href="/merchants">MERCHANTS</a></li>
+      <li ><a href="/tags">TAGS</a></li>
     </ul>
   </nav>
-<section>
+  <!-- </main> -->
+  <!-- </div> -->
+<section class="content">
   <%= yield %>
 </section>
 

@@ -1,0 +1,93 @@
+.table-layout {
+  background-color: rgba(119, 119, 119, 0.3)
+}
+
+.table-layout h3 {
+  text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.table-layout th {
+  background-color: rgb(53, 139, 214);
+  min-width: 90px;
+}
+
+.table-layout td {
+  
+  background-color: rgb(153, 207, 255);
+}
+
+.table-layout td:nth-child(odd) {
+  background-color: rgb(202, 227, 249);
+}
+
+/* .table-layou td {
+  background-color: rgb(153, 207, 255);
+}
+
+.table-layou td :nth-child(odd) {
+  background-color: rgb(202, 227, 249);
+} */
+
+/* .table-item {
+  padding: 3px;
+  background-color: rgb(153, 207, 255);
+} */
+
+/* .table-item :nth-child(odd) {
+  padding: 3px;
+  background-color: rgb(202, 227, 249);
+} */
+
+
+.table-item a {
+
+  display: block;
+
+  border: solid black;
+  border-width: thin;
+  padding: 3px;
+
+
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.table-item a:hover {
+  background-color: #555;
+}
+
+.table-item a:active {
+  background-color: black;
+}
+
+.home-text {
+ padding-right: 10%;
+}
+
+#final-col {
+  text-align: end;
+}
+
+
+/* a {
+    background-color: red;
+  color: white;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+} */
+
+/* a:hover {
+  background-color: #555;
+}
+
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  background-color: #ccc;
+} */

@@ -49,4 +49,38 @@ class Tag
   end
 
 
+  # def self.total()
+  #   sql = "SELECT SUM(value)
+  #   FROM transactions;"
+  #   result = SqlRunner.run(sql).first["sum"].to_f/100
+  #   return result.to_s
+  # end
+
+  def total()
+    sql = "SELECT SUM(value)
+    FROM transactions WHERE tag_id = $1;"
+    values = [@id]
+    result = SqlRunner.run(sql, values).first["sum"].to_f/100
+    return result.to_s
+  end
+
+# def transactions()
+#   sql = "SELECT * FROM transactions WHERE tag_id = $1"
+#   values = [@id]
+#   transactions = SqlRunner.run(sql, values)
+#   return transactions.map { |transaction| Transaction.new(transaction)}
+# end
+
+# def total_for_tag
+#   total = 0
+#   transactions = transactions()
+#   transaction.each { |transaction| total += transaction.value}
+# end
+
+
+
+
+
+
+
 end

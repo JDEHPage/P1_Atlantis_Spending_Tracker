@@ -1,0 +1,40 @@
+.home-layout {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tr-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* #button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+} */
+
+
+.link-button {
+    display: block;
+
+    border: solid black;
+    border-width: thin;
+    padding: 3px;
+
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#new-tr {
+  width: 55%;
+  text-align: center;
+}
