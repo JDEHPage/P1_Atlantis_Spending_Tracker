@@ -8,6 +8,10 @@
   justify-content: space-between;
 }
 
+h1 {
+  color: white;
+}
+
 
 /* #button {
   font: bold 11px Arial;
@@ -20,21 +24,3 @@
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
 } */
-
-
-.link-button {
-    display: block;
-
-    border: solid black;
-    border-width: thin;
-    padding: 3px;
-
-    color: black;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-#new-tr {
-  width: 55%;
-  text-align: center;
-}

@@ -1,48 +1,51 @@
 .table-layout {
-  background-color: rgba(119, 119, 119, 0.3)
+  border-radius: 5px;
+  background-color: rgba(187, 211, 249, 0.8)
 }
 
-.table-layout h3 {
+.table-layout table {
+  border-radius: 5px;
+}
+
+.table-layout p {
+  margin-top: 2%;
+  margin-bottom: 2%;
   text-align: center;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  /* font-size: 65%; */
+  font-style: normal;
+  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 .table-layout th {
-  background-color: rgb(53, 139, 214);
+  color: white;
+  height: 6vh;
+  background-color: rgb(19, 60, 85);
   min-width: 90px;
 }
 
-.table-layout td {
-  
-  background-color: rgb(153, 207, 255);
+.table-layout tr {
+  background-color: rgba(216, 237, 255, 0.7);
 }
 
-.table-layout td:nth-child(odd) {
-  background-color: rgb(202, 227, 249);
+.table-layout tr:nth-child(odd) {
+  background-color: rgba(153, 207, 255, 0.7);
 }
 
-/* .table-layou td {
-  background-color: rgb(153, 207, 255);
+/* .table-layout td {
+  padding-left: 10px;
+} */
+
+.table-layout tr {
+  font-size: 65%;
+}
+.item-space {
+  padding-left: 10px;
 }
 
-.table-layou td :nth-child(odd) {
-  background-color: rgb(202, 227, 249);
-} */
 
-/* .table-item {
-  padding: 3px;
-  background-color: rgb(153, 207, 255);
-} */
-
-/* .table-item :nth-child(odd) {
-  padding: 3px;
-  background-color: rgb(202, 227, 249);
-} */
-
-
-.table-item a {
-
+.table-layout a {
+  text-align: center;
   display: block;
 
   border: solid black;
@@ -51,25 +54,21 @@
 
 
   color: black;
-  border-radius: 5px;
   text-decoration: none;
 }
 
-.table-item a:hover {
-  background-color: #555;
+.table-layout a:hover {
+  background-color: rgba(89, 165, 216, 1);
 }
 
-.table-item a:active {
-  background-color: black;
+.table-layout a:active {
+  background-color: rgba(19, 60, 85, 1);
 }
 
 .home-text {
  padding-right: 10%;
 }
 
-#final-col {
-  text-align: end;
-}
 
 
 /* a {

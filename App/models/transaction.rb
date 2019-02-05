@@ -76,10 +76,10 @@ class Transaction
     sql = "SELECT SUM(value)
     FROM transactions;"
     result = SqlRunner.run(sql).first["sum"].to_f/100
-    return result.to_s
+    return result.to_f
   end
 
-  
+
 
 
   # def self.total_transactions()

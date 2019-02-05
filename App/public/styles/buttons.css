@@ -1,0 +1,28 @@
+.link-button {
+    display: block;
+
+    border: solid black;
+    border-width: thin;
+    padding: 3px;
+
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+
+    background-color: rgba(216, 237, 255, 0.7);
+}
+
+.link-button:hover {
+  background-color: rgba(89, 165, 216, 1);
+}
+
+.link-button:active {
+  background-color: rgba(19, 60, 85, 1);
+}
+
+
+
+#new-tr {
+  width: 55%;
+  text-align: center;
+}

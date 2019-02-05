@@ -7,26 +7,26 @@
 <div class="">
   <h1>All Your Transactions</h1>
   <a href="/transaction/new" class="link-button" id="new-tr">Add A Transaction</a>
-  <p>Your total transactions so far: £<%= Transaction.total %></p>
+  <p>Your total transactions so far: £<%= '%.2f' % Transaction.total %></p>
 </div>
 
 <div class="home-layout">
 
     <div class="table-layout">
-    <h3>Your Latest Transactions</h3>
+    <p>Your Latest Transactions</p>
     <table>
       <tr>
-        <th class="table-item">Date</th>
-        <th class="table-item">Merchant</th>
-        <th class="table-item">Cost</th>
-        <th class="table-item">Type Tag</th>
+        <th>Date</th>
+        <th>Merchant</th>
+        <th>Cost</th>
+        <th>Type Tag</th>
       </tr>
       <% @transaction.each do |transaction| %>
       <tr>
-        <td class="table-item" ><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
-        <td class="table-item" ><%= transaction.merchant.name %></td>
-        <td class="table-item">£<%= '%.2f' %(transaction.value.to_f/100) %></td>
-        <td class="table-item" id="final-col"><%= transaction.tag.name %></td>
+        <td><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
+        <td class="item-space"><%= transaction.merchant.name %></td>
+        <td class="item-space">£<%= '%.2f' %(transaction.value.to_f/100) %></td>
+        <td class="item-space"><%= transaction.tag.name %></td>
       </tr>
       <% end %>
     </table>
