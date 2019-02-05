@@ -20,8 +20,9 @@
 }
 
 
-
 .large-button {
   width: 55%;
   text-align: center;
+  position: relative;
+  left: 80px;
 }

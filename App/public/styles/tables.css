@@ -12,9 +12,7 @@
   margin-bottom: 2%;
   text-align: center;
   color: white;
-  /* font-size: 65%; */
   font-style: normal;
-  /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 .table-layout th {
@@ -25,6 +23,8 @@
 }
 
 .table-layout tr {
+  color: black;
+  font-size: 65%;
   background-color: rgba(216, 237, 255, 0.7);
 }
 
@@ -32,27 +32,16 @@
   background-color: rgba(153, 207, 255, 0.7);
 }
 
-/* .table-layout td {
-  padding-left: 10px;
-} */
-
-.table-layout tr {
-  font-size: 65%;
-}
 .item-space {
   padding-left: 10px;
 }
 
-
 .table-layout a {
   text-align: center;
   display: block;
-
   border: solid black;
   border-width: thin;
   padding: 3px;
-
-
   color: black;
   text-decoration: none;
 }

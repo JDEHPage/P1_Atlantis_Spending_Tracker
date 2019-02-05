@@ -1,0 +1,49 @@
+.cont-contain{
+  border-radius: 5px;
+  background-color: rgba(187, 211, 249, 0.9);
+  width: 290px;
+  position: relative;
+  right:60px;
+  top: 50px;
+}
+
+.cont-contain p{
+  color: black;
+  padding-left: 40px;
+}
+
+#Total {
+  border-radius: 5px;
+  background-color: rgba(187, 211, 249, 0.9);
+  width: 330px;
+  box-sizing: border-box;
+  position: relative;
+  right:60px;
+}
+
+#Total p{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 40px;
+}
+
+.show-contain{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.show-buttons{
+  position: relative;
+  right:140px;
+  top: 120px;
+}
+
+.show-edit {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.input-form-box {
+
+}
