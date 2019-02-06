@@ -3,24 +3,24 @@
 
 <!-- New Merchants -->
 <div class="new-input">
-<form method="post" action="/merchants">
+  <form method="post" action="/merchants">
     <label for="new_merchant"></label>
     <input type="text" name="name" id="new_merchant">
     <input id="link-button" type="submit" value="Add New Merchant">
-</form>
+  </form>
 </div>
 
 <!-- List of all merchants -->
 <div class="list-cont">
-<div class="list-items">
-  <% @merchant.each do |merchant| %>
-  <div class="element-list">
-    <p class="element"><%= merchant.name %></p>
-    <a id="link-button" class="element" href="/merchant/<%= merchant.id %>/edit">Edit</a>
-    <form id="link-button" class="element" method="post" action="/merchant/<%= merchant.id %>/delete" >
-      <input type="submit" value="Delete">
-    </form>
+  <div class="list-items">
+    <% @merchant.each do |merchant| %>
+    <div class="element-list">
+      <p class="element"><%= merchant.name %></p>
+      <a id="link-button" class="element" href="/merchant/<%= merchant.id %>/edit">Edit</a>
+      <form id="link-button" class="element" method="post" action="/merchant/<%= merchant.id %>/delete" >
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>

@@ -1,20 +1,20 @@
 <div class="show-contain">
-<div class="cont-contain">
-  <p>Date: <%= @transaction.transaction_date %></p>
-  <p>Merchant: <%= @transaction.merchant.name %></p>
-  <p>Cost: £<%= '%.2f' %(@transaction.value.to_f/100) %></p>
-  <p>Type Tag: <%= @transaction.tag.name %></p>
-</div>
+  <div class="cont-contain">
+    <p>Date: <%= @transaction.transaction_date %></p>
+    <p>Merchant: <%= @transaction.merchant.name %></p>
+    <p>Cost: £<%= '%.2f' %(@transaction.value.to_f/100) %></p>
+    <p>Type Tag: <%= @transaction.tag.name %></p>
+  </div>
 
 
-<div class="show-buttons">
-<div class="show-edit">
-  <a id="link-button" href="/transaction/<%= @transaction.id %>/edit">Edit</a>
-</div>
-<div>
-  <form method="post" action="/transaction/<%= @transaction.id %>/delete" >
-    <input type="submit" value="Delete" id="link-button">
-  </form>
-</div>
-</div>
+  <div class="show-buttons">
+    <div class="show-edit">
+      <a id="link-button" href="/transaction/<%= @transaction.id %>/edit">Edit</a>
+    </div>
+    <div>
+      <form method="post" action="/transaction/<%= @transaction.id %>/delete" >
+        <input type="submit" value="Delete" id="link-button">
+      </form>
+    </div>
+  </div>
 </div>

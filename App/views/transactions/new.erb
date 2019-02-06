@@ -1,45 +1,45 @@
 <div class="input-form-box">
+  <h1>Create Your New Transaction</h1>
+  <form method="POST" action="/transactions">
+    <div class="from-box">
 
-<form method="POST" action="/transactions">
-  <div class="from-box">
+
+      <div class="from-input">
+        <label for="transaction_date">Date:</label>
+        <input required type="date" name="transaction_date" id="transaction_date"/>
+      </div>
 
 
-    <div class="from-input">
-      <label for="transaction_date">Date:</label>
-      <input required type="date" name="transaction_date" id="transaction_date"/>
+      <div class="from-input">
+        <label for="merchant_select">Select Merchant:</label>
+        <select required name="merchant_id" id="merchant_select">
+          <option disabled selected value> -- select an option -- </option>
+          <% @merchant.each do |merchant| %>
+          <option value=<%= merchant.id %>><%= merchant.name %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="from-input">
+        <label for="transaction_cost">Cost:</label>
+        <input required type="number" min="0" step=".01" name="value" id="transaction_cost"/>
+      </div>
+
+      <div class="from-input">
+        <label for="tag_select">Select Tag:</label>
+        <select required name="tag_id" id="tag_select">
+          <option disabled selected value> -- select an option -- </option>
+          <% @tag.each do |tag| %>
+          <option value=<%= tag.id %>><%= tag.name %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="from-input">
+        <input type="submit" value="Add Transaction"/>
+      </div>
+
+
     </div>
-
-
-    <div class="from-input">
-      <label for="merchant_select">Select Merchant:</label>
-      <select required name="merchant_id" id="merchant_select">
-        <option disabled selected value> -- select an option -- </option>
-        <% @merchant.each do |merchant| %>
-        <option value=<%= merchant.id %>><%= merchant.name %></option>
-        <% end %>
-      </select>
-    </div>
-
-    <div class="from-input">
-      <label for="transaction_cost">Cost:</label>
-      <input required type="number" min="0" step=".01" name="value" id="transaction_cost"/>
-    </div>
-
-    <div class="from-input">
-      <label for="tag_select">Select Tag:</label>
-      <select required name="tag_id" id="tag_select">
-        <option disabled selected value> -- select an option -- </option>
-        <% @tag.each do |tag| %>
-        <option value=<%= tag.id %>><%= tag.name %></option>
-        <% end %>
-      </select>
-    </div>
-
-    <div class="from-input">
-      <input type="submit" value="Add Transaction"/>
-    </div>
-
-
-  </div>
-</form>
+  </form>
 </div>

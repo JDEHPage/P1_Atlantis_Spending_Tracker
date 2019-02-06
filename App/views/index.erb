@@ -4,33 +4,33 @@
 
 <div class="home-layout">
 
-<div class="home-text">
-<p>Many people take no care of their money till they come nearly to the end of it, and others do just the same with their time.</p>
-<p id = quote>Johann Wolfgang von Goeth</p>
-</div>
-
-<div class="home-layout">
-
-    <div class="table-layout">
-    <p>Your Latest Transactions</p>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Merchant</th>
-        <th>Cost</th>
-        <th>Type Tag</th>
-      </tr>
-      <% @transaction.first(3).each do |transaction| %>
-      <tr>
-        <td><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
-        <td class="item-space"><%= transaction.merchant.name %></td>
-        <td class="item-space">£<%= '%.2f' %(transaction.value.to_f/100) %></td>
-        <td class="item-space"><%= transaction.tag.name %></td>
-      </tr>
-      <% end %>
-    </table>
+  <div class="home-text">
+    <p>Many people take no care of their money till they come nearly to the end of it, and others do just the same with their time.</p>
+    <p id = quote>Johann Wolfgang von Goeth</p>
   </div>
 
-</div>
+  <div class="home-layout">
+
+    <div class="table-layout">
+      <p>Your Latest Transactions</p>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Merchant</th>
+          <th>Cost</th>
+          <th>Type Tag</th>
+        </tr>
+        <% @transaction.first(3).each do |transaction| %>
+        <tr>
+          <td><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
+          <td class="item-space"><%= transaction.merchant.name %></td>
+          <td class="item-space">£<%= '%.2f' %(transaction.value.to_f/100) %></td>
+          <td class="item-space"><%= transaction.tag.name %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+  </div>
 
 </div>

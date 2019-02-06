@@ -1,51 +1,51 @@
 <div class="input-form-box">
-
-<form method="POST" action="/transaction/<%= @transaction.id %>">
-  <div class="from-box">
-
-
-    <div class="from-input">
-      <label for="transaction_date">Date:</label>
-      <input type="date" name="transaction_date" id="transaction_date" value="<%= @transaction.transaction_date %>"/>
-    </div>
+  <h1>Update Your Transaction</h1>
+  <form method="POST" action="/transaction/<%= @transaction.id %>">
+    <div class="from-box">
 
 
-    <div class="from-input">
-      <label for="merchant_select">Select Merchant:</label>
-      <select name="merchant_id" id="merchant_select">
-        <% @merchant.each do |merchant| %>
-        <% if merchant.id == @transaction.merchant_id %>
+      <div class="from-input">
+        <label for="transaction_date">Date:</label>
+        <input type="date" name="transaction_date" id="transaction_date" value="<%= @transaction.transaction_date %>"/>
+      </div>
+
+
+      <div class="from-input">
+        <label for="merchant_select">Select Merchant:</label>
+        <select name="merchant_id" id="merchant_select">
+          <% @merchant.each do |merchant| %>
+          <% if merchant.id == @transaction.merchant_id %>
           <option value=<%= merchant.id %> selected ><%= merchant.name %></option>
-        <% else %>
+          <% else %>
           <option value=<%= merchant.id %>><%= merchant.name %></option>
-        <% end %>
-        <% end %>
-      </select>
-    </div>
+          <% end %>
+          <% end %>
+        </select>
+      </div>
 
-    <div class="from-input">
-      <label for="transaction_cost">Cost:</label>
-      <input type="number" min="0" step=".01" name="value" id="transaction_cost" value="<%= @transaction.value.to_f/100 %>"/>
-    </div>
+      <div class="from-input">
+        <label for="transaction_cost">Cost:</label>
+        <input type="number" min="0" step=".01" name="value" id="transaction_cost" value="<%= @transaction.value.to_f/100 %>"/>
+      </div>
 
-    <div class="from-input">
-      <label for="tag_select">Select Merchant:</label>
-      <select name="tag_id" id="tag_select">
-        <% @tag.each do |tag| %>
-        <% if tag.id == @transaction.tag_id %>
+      <div class="from-input">
+        <label for="tag_select">Select Merchant:</label>
+        <select name="tag_id" id="tag_select">
+          <% @tag.each do |tag| %>
+          <% if tag.id == @transaction.tag_id %>
           <option value=<%= tag.id %> selected ><%= tag.name %></option>
-        <% else %>
+          <% else %>
           <option value=<%= tag.id %>><%= tag.name %></option>
-        <% end %>
-        <% end %>
-      </select>
+          <% end %>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="from-input">
+        <input type="submit" value="Update Transaction"/>
+      </div>
+
+
     </div>
-
-    <div class="from-input">
-      <input type="submit" value="Update Transaction"/>
-    </div>
-
-
-  </div>
-</form>
+  </form>
 </div>

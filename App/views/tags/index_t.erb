@@ -11,15 +11,15 @@
 
 <!-- List of all tags -->
 <div class="list-cont">
-<div class="list-items">
-  <% @tag.each do |tag| %>
-  <div class="element-list">
-    <p class="element"><%= tag.name %></p>
-    <a id="link-button" class="element" href="/tag/<%= tag.id %>/edit">Edit</a>
-    <form id="link-button" class="element" method="post" action="/tag/<%= tag.id %>/delete" >
-      <input type="submit" value="Delete">
-    </form>
+  <div class="list-items">
+    <% @tag.each do |tag| %>
+    <div class="element-list">
+      <p class="element"><%= tag.name %></p>
+      <a id="link-button" class="element" href="/tag/<%= tag.id %>/edit">Edit</a>
+      <form id="link-button" class="element" method="post" action="/tag/<%= tag.id %>/delete" >
+        <input type="submit" value="Delete">
+      </form>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>

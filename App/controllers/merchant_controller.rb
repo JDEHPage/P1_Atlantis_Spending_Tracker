@@ -14,8 +14,6 @@ get '/merchant/:id/edit' do
   erb ( :"merchants/edit")
 end
 
-
-
 post '/merchants' do
   merchant = Merchant.new(params)
   merchant.save

@@ -13,10 +13,6 @@ get '/tag/:id/edit' do
   erb ( :"tags/edit")
 end
 
-
-
-
-
 post '/tags' do
   tag = Tag.new(params)
   tag.save
