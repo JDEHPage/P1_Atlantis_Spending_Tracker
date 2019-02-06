@@ -17,7 +17,7 @@
       <p class="element"><%= tag.name %></p>
       <a id="link-button" class="element" href="/tag/<%= tag.id %>/edit">Edit</a>
       <form id="link-button" class="element" method="post" action="/tag/<%= tag.id %>/delete" >
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete" onclick="return confirm('If you Delete this tag ALL associated transactions will be deleted. Please confirm to continue.');">
       </form>
     </div>
     <% end %>

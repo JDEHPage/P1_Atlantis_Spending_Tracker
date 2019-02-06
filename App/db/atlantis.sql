@@ -1,6 +1,9 @@
+
+DROP TABLE budget_categories;
 DROP TABLE transactions;
 DROP TABLE merchants;
 DROP TABLE tags;
+
 
 
 CREATE TABLE merchants(
@@ -21,6 +24,13 @@ CREATE TABLE transactions(
   transaction_date DATE,
   value INT,
   tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE
+);
+
+
+CREATE TABLE budget_categories(
+  id SERIAL8 primary key,
+  tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE,
+  amount INT
 );
 
 

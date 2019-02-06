@@ -1,9 +1,12 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/transaction.rb')
+require_relative( '../models/budget_cat.rb')
 also_reload( '../models/*' )
 
 get '/transactions' do
+  @tag = Tag.all()
+  @budget = Budget.all()
   @transaction = Transaction.all()
   erb ( :"transactions/index_actions")
 end
@@ -31,10 +34,6 @@ get '/transaction/:id/edit' do
   @transaction = Transaction.find(params['id'])
   erb ( :"transactions/edit")
 end
-
-
-
-
 
 
 post '/transactions' do

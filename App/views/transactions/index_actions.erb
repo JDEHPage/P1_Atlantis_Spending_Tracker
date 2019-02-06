@@ -6,7 +6,35 @@
     <div id="Total">
       <p>Your total transactions so far: £<%= '%.2f' % Transaction.total %></p>
     </div>
+    <div id="Total">
+      <p>Your total available budget: £<%= '%.2f' % Budget.total_budget %></p>
+    </div>
   </div>
+
+
+
+<!-- -------------------- -->
+<!-- Budgets -->
+
+<div class="budget-list-cont">
+  <div class="list-items">
+    <% @budget.each do |budget| %>
+    <div class="budget-element-list">
+      <p class="budget-element">Your budeget for <%= budget.b_tag.name %>'s: £<%= '%.2f' %(budget.amount.to_f/100) %></p>
+
+      <a id="link-button" class="budget-element" href="/budget/<%= budget.id %>/edit">Edit</a>
+
+      <form id="link-button" class="budget-element" method="post" action="/budget/<%= budget.id %>/delete" >
+        <input type="submit" value="Delete" >
+      </form>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<!-- -------------------- -->
 
   <div class="home-layout">
 

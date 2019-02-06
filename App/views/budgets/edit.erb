@@ -1,0 +1,32 @@
+<div class="input-form-box">
+  <h1>Update Your Budget</h1>
+  <form method="POST" action="/budget/<%= @budget.id %>">
+    <div class="from-box">
+
+      <div class="from-input">
+        <label for="tag_select">Select Merchant:</label>
+        <select name="tag_id" id="tag_select">
+          <% @tag.each do |tag| %>
+          <% if tag.id == @budget.tag_id %>
+          <option value=<%= tag.id %> selected ><%= tag.name %></option>
+          <% else %>
+          <option value=<%= tag.id %>><%= tag.name %></option>
+          <% end %>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="from-input">
+        <label for="budget_amout">Budget:</label>
+        <input type="number" min="0" step=".01" name="amount" id="budget_amout" value="<%= @budget.amount.to_f/100 %>"/>
+      </div>
+
+
+      <div class="from-input">
+        <input id="link-button" type="submit" value="Update Budget"/>
+      </div>
+
+
+    </div>
+  </form>
+</div>

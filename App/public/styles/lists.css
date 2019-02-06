@@ -36,6 +36,45 @@
   border-radius: 5px;
 }
 
+.budget-list-cont {
+  /* float:right; */
+  height: 230px;
+  width:370px;
+  overflow: auto;
+  background-color: rgba(187, 211, 249, 0.8);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+.budget-element-list {
+  /* display: flex;
+  justify-content: flex-start; */
+  padding-bottom: 2vh;
+  display: grid ;
+  grid-template-columns: auto 50px 55px;
+  grid-column-gap: 5px;
+  height: 20px;
+}
+
+.budget-element-list p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 4px;
+  color: black;
+  box-sizing: border-box;
+}
+
+.budget-element {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 80%;
+  background-color: rgba(216, 237, 255, 0.7);
+  box-sizing: border-box;
+}
+
+
+
 .list-items{
   padding: 5px 8px;
 }

@@ -1,6 +1,8 @@
 require_relative( "../models/merchant.rb" )
 require_relative( "../models/tag.rb" )
 require_relative( "../models/transaction.rb" )
+require_relative( "../models/budget_cat.rb" )
+
 require('pry')
 
 merchant1 = Merchant.new({
@@ -107,8 +109,6 @@ transaction6 = Transaction.new({
 #   'tag_id' => tag3.id
 #   })
 
-
-
 transaction1.save()
 transaction2.save()
 transaction3.save()
@@ -116,6 +116,27 @@ transaction4.save()
 transaction5.save()
 transaction6.save()
 # transaction7.save()
+
+
+budget1 = Budget.new({
+  'tag_id' => tag3.id,
+  'amount' => "60.00"
+  })
+
+budget2 = Budget.new({
+  'tag_id' => tag1.id,
+  'amount' => "40.00"
+  })
+
+budget3 = Budget.new({
+  'tag_id' => tag2.id,
+  'amount' => "23.45"
+  })
+
+budget1.save()
+budget2.save()
+budget3.save()
+
 
 binding.pry
 nil

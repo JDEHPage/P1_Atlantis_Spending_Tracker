@@ -15,9 +15,9 @@ class Transaction
 
   def initialize(options)
     @transaction_date = options['transaction_date']
-    @merchant_id = options['merchant_id']
+    @merchant_id = options['merchant_id'].to_i
     @value = options['value']
-    @tag_id = options['tag_id']
+    @tag_id = options['tag_id'].to_i
     @id = options['id'].to_i if options['id']
   end
 

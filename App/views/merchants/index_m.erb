@@ -18,7 +18,7 @@
       <p class="element"><%= merchant.name %></p>
       <a id="link-button" class="element" href="/merchant/<%= merchant.id %>/edit">Edit</a>
       <form id="link-button" class="element" method="post" action="/merchant/<%= merchant.id %>/delete" >
-        <input type="submit" value="Delete">
+        <input type="submit" value="Delete" onclick="return confirm('If you Delete this merchant ALL associated transactions will be deleted. Please confirm to continue.');">
       </form>
     </div>
     <% end %>
