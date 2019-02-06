@@ -12,7 +12,7 @@ get '/budget/:id/edit' do
   erb ( :"budgets/edit")
 end
 
-get '/budgets/new' do
+get '/budget/new' do
   @budget = Budget.all()
   @tag = Tag.all()
   erb ( :"budgets/new")
@@ -21,13 +21,13 @@ end
 post '/budgets' do
   budget = Budget.new(params)
   budget.save
-  redirect '/budgets'
+  redirect '/transactions'
 end
 
 post '/budgets/:id' do
   budget = Budget.new(params)
   budget.update
-  redirect '/budgets'
+  redirect '/transactions'
 end
 
 

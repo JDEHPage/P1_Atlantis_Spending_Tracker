@@ -1,1 +1,28 @@
-<p>new</p>
+<div class="input-form-box">
+  <h1>Create Your New Budget</h1>
+  <form method="POST" action="/budgets">
+    <div class="from-box">
+
+      <div class="from-input">
+        <label for="tag_select">Select Tag:</label>
+        <select required name="tag_id" id="tag_select">
+          <option disabled selected value> -- select an option -- </option>
+          <% @tag.each do |tag| %>
+          <option value=<%= tag.id %>><%= tag.name %></option>
+          <% end %>
+        </select>
+      </div>
+
+      <div class="from-input">
+        <label for="budget_amout">Budget:</label>
+        <input type="number" min="0" step=".01" name="amount" id="budget_amout"/>
+      </div>
+
+
+      <div class="from-input">
+        <input id="link-button" type="submit" value="Add Budget"/>
+      </div>
+
+    </div>
+  </form>
+</div>
