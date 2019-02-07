@@ -53,7 +53,9 @@
           <td><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
           <td class="item-space"><%= transaction.merchant.name %></td>
           <td class="item-space">£<%= '%.2f' %(transaction.value.to_f/100) %></td>
+          <% if transaction.tag  != nil %>
           <td class="item-space"><%= transaction.tag.name %></td>
+          <% end %>
         </tr>
         <% end %>
       </table>

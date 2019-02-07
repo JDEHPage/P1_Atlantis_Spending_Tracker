@@ -20,7 +20,7 @@
           <th>Cost</th>
           <th>Type Tag</th>
         </tr>
-        <% @transaction.first(3).each do |transaction| %>
+        <% @transaction.last(3).each do |transaction| %>
         <tr>
           <td><a href="/transaction/<%= transaction.id %>" ><%= transaction.transaction_date %></a></td>
           <td class="item-space"><%= transaction.merchant.name %></td>

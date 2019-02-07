@@ -44,9 +44,13 @@ class Tag
       WHERE id = $1"
       values = [id]
       result = SqlRunner.run(sql ,values).first
+      if result != nil
       tag = Tag.new(result)
       return tag
+    else
+      return result
     end
+  end
 
 
     # def self.total()
