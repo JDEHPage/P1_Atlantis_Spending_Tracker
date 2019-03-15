@@ -12,15 +12,6 @@ Monzo, MoneyDashboard, lots of mobile/online banking apps
 - The user should be able to assign tags and merchants to a transaction, as well as an amount spent on each transaction.
 - The app should display all the transactions a user has made in a single view, with each transaction's amount, merchant and tag, and a total for all transactions.
 
-
-
-
-- navigate back to video_game_rental folder
-- Type ruby app.rb in the terminal window
-- App should then open in default browser...
-- If app does not automatically open web address http://localhost:4567/
-
-
 ## Setup Server
 ```
 Navigate to the db folder in your terminal type psql -d atlantis -f atlantis.sql to create and populate your database.
