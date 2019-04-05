@@ -1,7 +1,7 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+# require( 'sinatra/contrib/all' )
 require_relative( '../models/tag.rb')
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 get '/tags' do
   @tag = Tag.all()

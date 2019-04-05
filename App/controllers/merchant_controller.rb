@@ -1,8 +1,8 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+# require( 'sinatra/contrib/all' )
 require( 'pry' )
 require_relative( '../models/merchant.rb')
-also_reload( '../models/*' )
+# also_reload( '../models/*' )
 
 get '/merchants' do
   @merchant = Merchant.all()
