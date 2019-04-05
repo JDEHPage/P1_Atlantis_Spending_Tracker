@@ -5,33 +5,22 @@ class Transaction
   attr_reader( :id )
   attr_accessor( :merchant_id, :transaction_date, :value, :tag_id )
 
-  # def initialize(options = {})
-  #   @merchant_id = options['merchant_id'] || 0
-  #   @transaction_date = options['transaction_date']
-  #   @value = options['value']
-  #   @tag_id = options['tag_id']
-  #   @id = options['id'].to_i if options['id']
-  # end
-
   def initialize(options)
     @transaction_date = options['transaction_date']
-    @merchant_id = options['merchant_id']
+    @merchant_id = options['merchant_id'].to_i
     @value = options['value']
-    @tag_id = options['tag_id']
+    @tag_id = options['tag_id'].to_i
     @id = options['id'].to_i if options['id']
   end
-
 
   def save
     sql ="INSERT INTO transactions(
     transaction_date, merchant_id, value, tag_id
     ) VALUES ( $1, $2, $3, $4 ) RETURNING id"
-    values = [@transaction_date, @merchant_id.to_i, (@value.to_f * 100).to_i, @tag_id.to_i]
+    values = [@transaction_date, @merchant_id, (@value.to_f * 100).to_i, @tag_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
-
-
 
   def self.all
     sql = "SELECT * FROM transactions"
@@ -49,7 +38,7 @@ class Transaction
     sql = "UPDATE transactions SET (
     transaction_date, merchant_id, value, tag_id )
     = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@transaction_date, @merchant_id.to_i, (@value.to_f * 100).to_i, @tag_id.to_i, @id]
+    values = [@transaction_date, @merchant_id, (@value.to_f * 100).to_i, @tag_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -63,12 +52,12 @@ class Transaction
   end
 
   def merchant()
-    merchant = Merchant.find(@merchant_id.to_i)
+    merchant = Merchant.find(@merchant_id)
     return merchant
   end
 
   def tag()
-    tag = Tag.find(@tag_id.to_i)
+    tag = Tag.find(@tag_id)
     return tag
   end
 
@@ -78,19 +67,5 @@ class Transaction
     result = SqlRunner.run(sql).first["sum"].to_f/100
     return result.to_f
   end
-
-
-
-
-  # def self.total_transactions()
-  #    total = 0
-  #    total_transactions = Transaction.all()
-  #    total_transactions.each { |transaction| total += transaction.value.to_f }
-  #    return total/100
-  #  end
-
-
-
-
 
 end

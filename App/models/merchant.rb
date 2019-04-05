@@ -10,11 +10,6 @@ class Merchant
     @id = options['id'].to_i if options['id']
   end
 
-  # def initialize(options = {})
-  #   @name = options['name'] || ''
-  #   @id = options['id'].to_i if options['id']
-  # end
-
   def save
     sql ="INSERT INTO merchants(
     name
@@ -31,12 +26,6 @@ class Merchant
       merchants = SqlRunner.run(sql)
       return merchants.map {|merchant| Merchant.new(merchant)}
     end
-
-    # def delete()
-    #   sql = "DELETE FROM merchants WHERE id = $1"
-    #   values = [@id]
-    #   SqlRunner.run(sql, values)
-    # end
 
     def self.delete(id)
       sql = "DELETE FROM merchants WHERE id = $1"
@@ -59,11 +48,5 @@ class Merchant
       merchant = Merchant.new(result)
       return merchant
     end
-
-
-
-
-
-
 
   end
