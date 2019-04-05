@@ -4,8 +4,6 @@ require( 'pry' )
 require_relative( '../models/budget_cat.rb')
 also_reload( '../models/*' )
 
-
-
 get '/budget/:id/edit' do
   @tag = Tag.all()
   @budget = Budget.find(params['id'])
@@ -29,7 +27,6 @@ post '/budgets/:id' do
   budget.update
   redirect '/transactions'
 end
-
 
 post '/budget/:id/delete' do
   Budget.delete(params[:id])

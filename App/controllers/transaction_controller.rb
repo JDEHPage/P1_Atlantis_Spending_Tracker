@@ -23,18 +23,12 @@ get '/transaction/:id' do
   erb( :"transactions/show" )
 end
 
-# get '/victims/:id' do
-#   @victim = Victim.find(params['id'].to_i)
-#   erb( :"victims/show" )
-# end
-
 get '/transaction/:id/edit' do
   @tag = Tag.all()
   @merchant = Merchant.all()
   @transaction = Transaction.find(params['id'])
   erb ( :"transactions/edit")
 end
-
 
 post '/transactions' do
   transaction = Transaction.new(params)
