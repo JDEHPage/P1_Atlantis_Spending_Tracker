@@ -15,9 +15,9 @@ class Transaction
 
   def initialize(options)
     @transaction_date = options['transaction_date']
-    @merchant_id = options['merchant_id'].to_i
+    @merchant_id = options['merchant_id']
     @value = options['value']
-    @tag_id = options['tag_id'].to_i
+    @tag_id = options['tag_id']
     @id = options['id'].to_i if options['id']
   end
 
@@ -26,7 +26,7 @@ class Transaction
     sql ="INSERT INTO transactions(
     transaction_date, merchant_id, value, tag_id
     ) VALUES ( $1, $2, $3, $4 ) RETURNING id"
-    values = [@transaction_date, @merchant_id, (@value.to_f * 100).to_i, @tag_id]
+    values = [@transaction_date, @merchant_id.to_i, (@value.to_f * 100).to_i, @tag_id.to_i]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -49,7 +49,7 @@ class Transaction
     sql = "UPDATE transactions SET (
     transaction_date, merchant_id, value, tag_id )
     = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@transaction_date, @merchant_id, (@value.to_f * 100).to_i, @tag_id, @id]
+    values = [@transaction_date, @merchant_id.to_i, (@value.to_f * 100).to_i, @tag_id.to_i, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -63,12 +63,12 @@ class Transaction
   end
 
   def merchant()
-    merchant = Merchant.find(@merchant_id)
+    merchant = Merchant.find(@merchant_id.to_i)
     return merchant
   end
 
   def tag()
-    tag = Tag.find(@tag_id)
+    tag = Tag.find(@tag_id.to_i)
     return tag
   end
 
