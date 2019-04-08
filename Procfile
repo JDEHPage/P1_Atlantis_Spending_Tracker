@@ -1,3 +1,3 @@
 # Procfile
 
-web: ruby app.rb
+web: ruby ./App/app.rb
