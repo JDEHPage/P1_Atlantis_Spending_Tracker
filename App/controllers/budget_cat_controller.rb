@@ -1,6 +1,6 @@
 require( 'sinatra' )
 # require( 'sinatra/contrib/all' )
-require( 'pry' )
+# require( 'pry' )
 require_relative( '../models/budget_cat.rb')
 # also_reload( '../models/*' )
 
